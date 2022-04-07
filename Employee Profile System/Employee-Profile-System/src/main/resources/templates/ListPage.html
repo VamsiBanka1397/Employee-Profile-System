@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ListPage</title>
+    <h1 style="color: brown;text-align: center;">List Of Employees</h1>
+</head>
+
+<body>
+    <div align="center">
+    <a href="Add Page.html">Add Employee</a>
+    <br/><br/>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+        <th>EmployeeCode</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Date Of Birth</th>
+        <th>Date of Joining</th>
+        <th>Email</th>
+        <th>Mobile Number</th>
+        <th>Salary</th>
+        <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="emptable : ${ListPage}">
+        <td th:text="${emptable.employeecode}">EmployeeCode</td>
+        <td th:text="${emptable.first name}">FirstName</td>
+        <td th:text="${emptable.last name}">LastName</td>
+        <td th:text="${emptable.date of birth}">Date of Birth</td>
+        <td th:text="${emptable.date of joining}">Date of Joining</td>
+        <td th:text="${emptable.email}">Email</td>
+        <td th:text="${emptable.Mobile Number}">Mobile Number</td>
+        <td th:text="${emptable.Salary}">Salary</td>
+    
+        <td>
+            <a href="Edit Page.html">Edit</a>
+            &nbsp;&nbsp;&nbsp;
+            <a href="@{'/delete/' + ${emptable.id}}">Delete</a>
+        </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
